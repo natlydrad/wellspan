@@ -23,8 +23,9 @@ def calculate():
     height_cm = float(data['height'])  # from form input (in centimeters)
     weight_kg = float(data['weight'])  # from form input (in kilograms)
 
-    height_m = height_cm / 100
-    bmi = weight_kg / (height_m ** 2)
+    height_in = int(data["height"])
+    weight_lb = int(data["weight"])
+    bmi = 703 * weight_lb / (height_in ** 2)
 
     if 18.5 <= bmi <= 25:
         BMI_penalty = 0
