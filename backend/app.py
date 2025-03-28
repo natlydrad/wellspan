@@ -57,17 +57,8 @@ def calculate():
     social_support = 2 if data['hasBestFriend'] == 'Y' else 0
 
     # Calculate base QoL score
-    qol_score = 100 \
-        - (10 * stress_level / 5) \
-        - (10 * (3 - physical_activity) / 3) \
-        - (8 * (3 - sleep_quality) / 2) \
-        - (7 * BMI_penalty) \
-        - (6 * smoking_status) \
-        - (4 * alcohol_use) \
-        - (7 * (3 - int(data['fruitsVeg']) / 2.3)) \
-        - (5 * (2 - social_support))
+    qol_score = calculate_qol(data)
 
-    qol_score = round(qol_score, 1)
 
     # Life expectancy base (can use your own method)
     base_life_expectancy = 81
