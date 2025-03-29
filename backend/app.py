@@ -19,6 +19,8 @@ def calculate():
     data = request.get_json()
     print("Received form data:", data)
 
+    age = int(data['age'])
+
     # Calculate base QoL score
     qol_score = calculate_qol(data)
 
